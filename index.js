@@ -1,4 +1,10 @@
 export const SententeCase = (string) => {
-  string = string.trim().toLowerCase();
-  return string.charAt(0).toUpperCase() + string.slice(1);
+ return string
+      .trim()
+      .toLowerCase()
+      .split('.')
+      .map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+      })
+      .join('.')
 };
